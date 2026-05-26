@@ -22,18 +22,18 @@ export const myPage = PageBlueprint.make({
 
 ```tsx
 // src/components/MyPage/MyPage.tsx
-import { Content } from '@backstage/core-components';
+import { Container } from '@backstage/ui';
 
 export function MyPage() {
   return (
-    <Content>
+    <Container>
       {/* page body — NO Page, Header, or PageWithHeader wrappers */}
-    </Content>
+    </Container>
   );
 }
 ```
 
-The framework's `PageLayout` automatically renders `PluginHeader` from the plugin's `title` and `icon`. The page component should not include `Page`, `Header`, or `PageWithHeader` from `@backstage/core-components` — those are old-system constructs.
+The framework's `PageLayout` automatically renders `PluginHeader` from the plugin's `title` and `icon`. The page component should not include `Page`, `Header`, or `PageWithHeader` from `@backstage/core-components` — those are old-system constructs. Use `Container` from `@backstage/ui` as the outermost wrapper for page content — it provides proper spacing and max-width constraints.
 
 `title` and `icon` params on `PageBlueprint` are only needed when they should differ from the plugin's own values. If omitted, the plugin-level values are used.
 
@@ -42,8 +42,7 @@ The framework's `PageLayout` automatically renders `PluginHeader` from the plugi
 When the page needs a subtitle or action buttons below the framework header, use `Header` from `@backstage/ui`:
 
 ```tsx
-import { Header } from '@backstage/ui';
-import { Content } from '@backstage/core-components';
+import { Header, Container } from '@backstage/ui';
 
 export function MyPage() {
   return (
@@ -57,9 +56,9 @@ export function MyPage() {
           </>
         }
       />
-      <Content>
+      <Container>
         <MyPageContent />
-      </Content>
+      </Container>
     </>
   );
 }
