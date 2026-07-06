@@ -1,6 +1,6 @@
 ---
 name: creating-backstage-scaffolder-field
-description: Use when building a custom scaffolder form field — a React component that scaffolder template forms can use via `ui:field: <name>`. Covers FormFieldBlueprint, createFormField, the field component props (formData, onChange, schema, rawErrors, etc.), Zod-based field schema via makeFieldSchema, optional validation, and registering the field as a frontend extension. Triggers on phrases like "scaffolder field", "custom field extension", "form field for scaffolder templates", "ui:field".
+description: "Use when building a custom scaffolder form field — a React component that scaffolder template forms can use via `ui:field: <name>`. Covers FormFieldBlueprint, createFormField, the field component props (formData, onChange, schema, rawErrors, etc.), Zod-based field schema via makeFieldSchema, optional validation, and registering the field as a frontend extension. Triggers on phrases like \"scaffolder field\", \"custom field extension\", \"form field for scaffolder templates\", \"ui:field\"."
 ---
 
 # Creating a Backstage Scaffolder Form Field
