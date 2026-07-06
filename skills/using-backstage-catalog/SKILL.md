@@ -49,3 +49,15 @@ description: Use when a Backstage plugin needs to interact with the catalog — 
 ## UI conventions
 
 Use `@backstage/ui` for rendering when possible (`Skeleton`, `Alert`, `Text`, `Flex`, `Button`, …). See `using-backstage-ui` skill for the full component catalog and styling guidance.
+
+## New entity kinds (Backstage 1.51+)
+
+Backstage 1.51 added catalog kinds worth knowing when querying or ingesting entities (types + type guards from `@backstage/catalog-model/alpha`; register them by installing the opt-in `@backstage/plugin-catalog-backend-module-ai-model` backend module):
+
+- **`AiResource`** — catalogs AI tools and governance rules. Two `spec.type` subtypes:
+  - `skill` — optional `disciplines`, `categories`, `agents`, `dependsOn` (plus required `lifecycle`/`owner`). Guard: `isSkillAiResourceEntity`.
+  - `rule` — required `category` and `rationale`. Guard: `isRuleAiResourceEntity`.
+  - Generic guard/validator: `isAiResourceEntity` / `aiResourceEntityV1alpha1Validator`.
+- **`API` kind, `spec.type: 'mcp-server'`** — models an MCP server as a first-class API, using a `spec.remotes` list (each `{ type, url }`) instead of the string `definition` field.
+
+These are `@alpha`. The catalog access patterns above (`getEntityByRef`, `getEntities` with filters) are kind-agnostic and work with these kinds like any other — e.g. `getEntities({ filter: { kind: 'AiResource', 'spec.type': 'skill' } })`.

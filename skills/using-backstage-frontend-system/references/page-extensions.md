@@ -37,6 +37,8 @@ The framework's `PageLayout` automatically renders `PluginHeader` from the plugi
 
 `title` and `icon` params on `PageBlueprint` are only needed when they should differ from the plugin's own values. If omitted, the plugin-level values are used.
 
+Since Backstage 1.51, these `title`/`icon` params also drive the page's **sidebar nav item** — `NavItemBlueprint` was removed, and nav items are now discovered from `PageBlueprint`. `icon` is a JSX `IconElement`, e.g. `icon: <RiToolsLine />` (a Remix icon works directly; no MUI needed).
+
 ### Page with subtitle / custom actions
 
 When the page needs a subtitle or action buttons below the framework header, use `Header` from `@backstage/ui`:

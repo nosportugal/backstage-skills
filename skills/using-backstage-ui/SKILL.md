@@ -52,7 +52,7 @@ import '@backstage/ui/css/styles.css';
 - `Flex` uses `justify="between"` (NOT `space-between`); `gap` goes via inline `style` or BUI tokens.
 - `Tooltip` requires `TooltipTrigger` as a parent.
 - `TextField`'s `onChange` receives a string directly, not an event object.
-- Two known fallbacks where BUI doesn't have an equivalent: `NavItemBlueprint`'s `icon` prop expects a MUI `IconComponent` type (Remix icons aren't compatible there); `@material-ui/lab` `Timeline` has no BUI replacement. Use MUI in those specific cases.
+- One known fallback where BUI doesn't have an equivalent: `@material-ui/lab` `Timeline` has no BUI replacement. Use MUI in that specific case.
 
 ## Data fetching convention
 

@@ -68,7 +68,7 @@ import CategoryIcon from '@material-ui/icons/Category';
 icon: <CategoryIcon fontSize="inherit" />,
 ```
 
-Note: this works for the plugin icon and for `PageBlueprint`/`PluginHeader`, but `NavItemBlueprint`'s `icon` prop requires an MUI `IconComponent` type — Remix icons are not compatible there.
+Note: this works for the plugin icon and for `PageBlueprint`/`PluginHeader`. Since Backstage 1.51, sidebar nav items are derived from `PageBlueprint`'s `title`/`icon` params (`NavItemBlueprint` was removed), and that `icon` is a JSX `IconElement` — so Remix icons work for nav item icons too.
 
 ## Post-scaffold usage
 
