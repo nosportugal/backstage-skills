@@ -16,6 +16,21 @@ Or pick individual skills interactively:
 npx skills add vinzscam/backstage-skills
 ```
 
+### As a Claude Code / GitHub Copilot CLI plugin
+
+This repo is also a self-hosted plugin marketplace (`.claude-plugin/marketplace.json`),
+so you can install the skill pack as a plugin straight from it:
+
+```bash
+# Claude Code
+claude plugin marketplace add vinzscam/backstage-skills
+claude plugin install backstage-skills@backstage-skills
+
+# GitHub Copilot CLI
+copilot plugin marketplace add vinzscam/backstage-skills
+copilot plugin install backstage-skills@backstage-skills
+```
+
 ## Usage
 
 After install, skills activate automatically when your agent detects a matching intent:
